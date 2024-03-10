@@ -41,7 +41,3 @@ You can input **sentence that you want to correct** now. <br>
 - Provide Few Shots Examples
 
 ## Resources
-
-- [List](https://api.flutter.dev/flutter/dart-core/List-class.html)
-- [TextStyle](https://api.flutter.dev/flutter/painting/TextStyle-class.html) and [GoogleFonts](https://pub.dev/packages/google_fonts)
-- [BoxDecoration](https://api.flutter.dev/flutter/painting/BoxDecoration-class.html)
