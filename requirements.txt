@@ -1,0 +1,4 @@
+requests==2.31.0
+openai==0.28.0
+streamlit==1.28.2
+streamlit-lottie==0.0.5
