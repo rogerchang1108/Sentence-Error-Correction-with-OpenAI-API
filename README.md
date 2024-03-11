@@ -2,6 +2,10 @@
 
 In this project, utilizing Python and OpenAI API to develop a Streamlit web focused on correcting sentence error.
 
+## Demo Website
+
+[🌐 Sentence Error Correction](https://sentence-error-correction-with-openai-api-rogerchang1108.streamlit.app/)
+
 ## Features
 
 ### Usage
@@ -41,3 +45,5 @@ You can input **sentence that you want to correct** now. <br>
 - Provide Few Shots Examples
 
 ## Resources
+
+- [Streamlit Community Cloud](https://docs.streamlit.io/streamlit-community-cloud)
