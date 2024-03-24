@@ -12,20 +12,25 @@ def correct_error(prompt, input_content, model_selected):
     content_statement = prompt
     
     content_input = f"""{input_content}"""
-	
-    response = openai.ChatCompletion.create(
-        model = model_selected,
-        messages = [
-            {'role': 'user', 'content': content_statement},
-            {'role': 'user', 'content': content_input}
-        ],
-        temperature = 0.7
-    )
-
-    response_content = response['choices'][0]['message']['content']
     
-    st.write(f"""{model_selected}'s response:""")
-    st.write(response_content)
+    try:
+        response = openai.ChatCompletion.create(
+            model = model_selected,
+            messages = [
+                {'role': 'user', 'content': content_statement},
+                {'role': 'user', 'content': content_input}
+            ],
+            temperature = 0.7
+        )
+
+        response_content = response['choices'][0]['message']['content']
+        
+        st.write(f"""{model_selected}'s response:""")
+        st.write(response_content)
+    
+    except Exception as e:
+        st.info('❗Something went wrong! Check your OpenAI API Key!!!')
+        st.error(f'An error occurred: {e}')
 
 tab1, tab2 = st.tabs(["Sentence Error Correction", "Surprise!!!"])
 
@@ -48,7 +53,7 @@ with tab1:
     with st.form(key='my_form'):
         prompt = st.text_area(
             'Prompt for ChatGPT (You Can Adjust it if you want)',
-            f"""Act as a English teacher.
+            f"""Act as an English teacher.
             
 Correct the input sentences. There may be article, vocabulary choosing, spelling or phase choosing error, which make the meaning of sentence incorrect and ambiguous. 
 
@@ -78,7 +83,7 @@ Input:  It's a pity that you were absent from the training session.
 Output: It's a pity that you weren't at the training session.
     
 Here is the input:""",
-            height = 190,
+            height = 600,
             disabled = st.session_state.disabled
         )   
     
